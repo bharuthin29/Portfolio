@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <h1>About Me</h1>
+        <p>Short description about yourself.</p>
+    </section>
+    
+    <section id="skills">
+        <h1>Skills</h1>
+        <div class="skills">
+            <div>HTML</div>
+            <div>CSS</div>
+            <div>JavaScript</div>
+            <div>Bootstrap</div>
+            <div>MySQL</div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="projects">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <p>Project 1 description</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <p>Project 2 description</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Email: example@example.com</p>
+        <p>Phone: 123-456-7890</p>
+        <div class="contact">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = "translateY(50px)";
+                section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+            });
+            
+            const revealSections = () => {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 0.8) {
+                        section.style.opacity = 1;
+                        section.style.transform = "translateY(0)";
+                    }
+                });
+            };
+            
+            window.addEventListener("scroll", revealSections);
+            revealSections();
+        });
+    </script>
+</body>
+</html>
