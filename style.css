@@ -1,109 +1,616 @@
-body {
-    font-family: 'Poppins', sans-serif;
+/* ================== General Reset ================== */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-    transition: background 0.5s ease-in-out;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
-nav {
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    padding: 15px;
+
+/* ================== Header Styling ================== */
+header {
+    background-color: #000; /* Dark black background */
+    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     z-index: 1000;
-    transition: background 0.5s ease-in-out;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 4px solid cyan;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.6); /* Cyan shadow */
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+/* ================== Navbar Styling ================== */
+.navbar {
     display: flex;
     justify-content: center;
-    animation: fadeIn 1s ease-in-out;
-}
-nav ul li {
-    margin: 0 15px;
-    transition: transform 0.3s ease-in-out;
-}
-nav ul li:hover {
-    transform: scale(1.1);
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-}
-section {
-    padding: 80px 20px;
-    margin-top: 50px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    max-width: 600px;
-    margin: auto;
-}
-.skills div {
-    background: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-}
-.skills div:hover {
-    transform: scale(1.1);
-}
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-.project img {
+    align-items: center;
     width: 100%;
-    border-radius: 10px;
+}
+
+/* Container for Logo and Navigation */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+    width: 90%;
+    /* border: 2px solid cyan; */
+    max-width: 1200px;
+}
+.container svg {
+    font-size: 60px;
+    color: cyan;
     transition: transform 0.3s ease-in-out;
 }
-.project img:hover {
-    transform: scale(1.1);
+
+.container svg:hover {
+    transform: rotate(15deg) scale(1.1);
 }
-.contact a {
+
+.ani1 {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* ================== Navigation Links ================== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
     text-decoration: none;
-    color: #333;
-    margin: 0 10px;
-    font-size: 24px;
-    transition: color 0.3s ease-in-out;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
 }
-.contact a:hover {
-    color: #ff7e5f;
+
+/* Button Hover & Active State */
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0.8);
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+    z-index: -1;
+    transform: translate(-50%, -50%);
 }
-@keyframes fadeIn {
+
+.nav-links a:hover::before {
+    width: 110%;
+}
+
+.nav-links a:hover {
+    color: #000;
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 5px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+.nav-links a:active {
+    transform: scale(0.95);
+    background-color: rgba(0, 255, 255, 1);
+    color: #000;
+}
+
+/* ================== Responsive Navbar ================== */
+
+
+/* ================== Home Section ================== */
+.home {
+    background-color: #000;
+    color: cyan;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* ================== Image & Text Container ================== */
+.image-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.content{
+    display: flex;
+    justify-content:space-between;
+}
+
+/* Image Styling */
+.image-text-container img {
+    border-radius: 50%;
+    border: 5px solid cyan;
+    box-shadow: 0 0 15px cyan;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.image-text-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px cyan;
+}
+
+/* ================== Text Content ================== */
+.text-content h1 {
+    font-size: 2.5rem;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+}
+
+@keyframes glow {
     from {
-        opacity: 0;
+        text-shadow: 0 0 10px cyan;
     }
     to {
-        opacity: 1;
+        text-shadow: 0 0 20px cyan, 0 0 30px cyan;
+    }
+}
+
+/* ================== Button Styling ================== */
+.btn {
+    background-color: transparent;
+    border: 2px solid cyan;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn a {
+    color: cyan;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: cyan;
+    color: black;
+    box-shadow: 0 0 15px cyan;
+}
+
+.btn:hover a {
+    color: black;
+}
+
+/* ================== Responsive Design for Home Section ================== */
+
+
+/* ================== About Section ================== */
+.about {
+    /* width:100%; */
+    background-color: #000;
+    /* border: 2px solid yellow; */
+    color: cyan;
+    padding: 50px 20px;
+    text-align: center;
+}
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    /* border: 1px solid cyan; */
+    max-width: 800px;
+    margin: 0 auto;
+}
+/* Projects Section Styles */
+.projects {
+    background-color: #000;
+    color: #00FFFF;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section Heading */
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Project Cards Layout */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Project Card */
+.project-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adding before animation effect */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Heading Inside Card */
+.project-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect - Heading */
+.project-card h3:hover {
+    text-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF;
+}
+
+/* Hover Effect - Entire Card */
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00FFFF;
+}
+
+/* Active Effect (Click) */
+.project-card:active {
+    transform: scale(0.95) rotate(3deg);
+    background-color: rgba(0, 255, 255, 0.3);
+}
+/* Skills Section */
+.skill {
+    background-color: #000;
+    color: #00FFFF;
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Skills Heading */
+.skill h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Skills Heading Hover Effect */
+.skill h2:hover {
+    text-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Skills List */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual Skill Card */
+.skill-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    width: 300px;
+    border-radius: 10px;
+    border: 2px solid #00FFFF;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Skill Card Hover Effect */
+.skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00FFFF;
+    background: rgba(0, 255, 255, 0.2);
+}
+
+/* Skill Image */
+.skill-card img {
+    display: block;
+    margin: 0 auto 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Animation */
+.skill-card:hover img {
+    transform: rotate(15deg) scale(1.2);
+}
+
+/* Progress Bar Container */
+.skill-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated Skill Percentage */
+.skill-fill {
+    height: 100%;
+    width: 0;
+    background: #00FFFF;
+    border-radius: 5px;
+    transition: width 2s ease-in-out;
+}
+
+/* Skill Percentage Text */
+.skill-percentage {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Activate Animation on Scroll */
+@keyframes loadSkill {
+    from {
+        width: 0;
+    }
+}
+
+/* Responsive Design */
+/* Contact Section */
+.contact {
+    background-color: #000;
+    color: #00FFFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Contact Heading */
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Heading Hover Effect */
+.contact h2:hover {
+    text-shadow: 0 0 15px #00FFFF, 0 0 25px #00FFFF;
+}
+
+/* Form Container */
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Input Fields */
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+    background: transparent;
+    color: #00FFFF;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Input Focus Animation */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    box-shadow: 0 0 15px #00FFFF;
+    transform: scale(1.02);
+}
+
+/* Placeholder Color */
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: rgba(0, 255, 255, 0.7);
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #00FFFF;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover */
+.btn-submit:hover {
+    background-color: #000;
+    color: #00FFFF;
+    box-shadow: 0 0 15px #00FFFF, inset 0 0 10px #00FFFF;
+}
+
+/* Button Active Effect */
+.btn-submit:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 25px #00FFFF;
+}
+
+/* Button Before Animation */
+.btn-submit::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 10%, transparent 50%);
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+/* Button Hover Glow Effect */
+.btn-submit:hover::before {
+    transform: scale(1);
+}
+
+/* Thank You Message */
+.thank-you-msg {
+    display: none;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #00FF00;
+}
+footer {
+    background-color: black; /* Black background */
+    color: cyan; /* Cyan text */
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* Responsive Design */
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    .home{
+        display: block;
+    }
+}
+@media (min-width: 768px) {
+    .image-text-container {
+        flex-direction: row;
+        text-align: left;
+    }
+    .image-text-container img {
+        width: 200px;
+        height: 200px;
+        margin-right: 20px;
+    }
+    .text-content {
+        max-width: 600px;
     }
 }
 @media (max-width: 768px) {
-    nav ul {
+    .about h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 768px) {
+    .skills-list {
         flex-direction: column;
+        align-items: center;
     }
-    nav ul li {
-        margin: 10px 0;
+
+    .skill-card {
+        width: 90%;
     }
-    .projects, .skills {
-        grid-template-columns: 1fr;
+}
+@media (max-width: 768px) {
+    #contact-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+        padding: 10px;
     }
 }

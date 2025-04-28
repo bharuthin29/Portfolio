@@ -3,86 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>My Portfolio</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
+    <link rel="icon" href="https://www.pinclipart.com/picdir/big/310-3108403_mentors-clipart.png">
 </head>
 <body>
+
+    <!-- Navbar -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="container">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: rgba(0, 255, 255, 0.8); margin-left: 10px; margin-top: 1px; font-size: 60px;">
+                    <path d="M225.27,60.21l-96-32a4,4,0,0,0-2.54,0l-96,32A4,4,0,0,0,28,64v80a4,4,0,0,0,8,0V69.55L79.88,84.18a60,60,0,0,0,24.54,91c-20.86,5.74-39,19.13-51.77,38.65a4,4,0,0,0,6.7,4.36C75.17,193.92,100.2,180,128,180s52.83,13.92,68.65,38.18a4,4,0,0,0,6.7-4.36c-12.72-19.52-30.91-32.91-51.77-38.65a60,60,0,0,0,24.54-91l49.15-16.39a4,4,0,0,0,0-7.58ZM180,120A52,52,0,1,1,87.93,86.86l38.8,12.93a3.95,3.95,0,0,0,2.54,0l38.8-12.93A51.85,51.85,0,0,1,180,120ZM128,91.78,44.65,64,128,36.22,211.35,64Z"></path>
+                </svg>
+                <h1 class="ani1">MY PORTFOLIO</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT ME</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#skill">SKILLS</a></li>
+                    <li><a href="#contact">CONTACTS</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
-    
-    <section id="about">
-        <h1>About Me</h1>
-        <p>Short description about yourself.</p>
-    </section>
-    
-    <section id="skills">
-        <h1>Skills</h1>
-        <div class="skills">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>JavaScript</div>
-            <div>Bootstrap</div>
-            <div>MySQL</div>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h1>Projects</h1>
-        <div class="projects">
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <p>Project 1 description</p>
+    <section id="home" class="home">
+        <div class="content">
+            <div class="image-text-container">
+                <img src="" 
+                width="174" height="186"> 
+                
             </div>
-            <div class="project">
-                <img src="project2.jpg" alt="Project 2">
-                <p>Project 2 description</p>
+            <div class="text-content">
+                <h1>Hi, I'm Bharuthin.k</h1><br>
+                <p>Web developer proficient in Java (Fundamentals), HTML, CSS, JavaScript, Bootstrap, and MySQL.<br> Holds a BSc.IT degree from Bharathiar University<br> with expertise in Web Development. <br>Database Management, and Object-Oriented Programming.<br> Passionate about building responsive and user-friendly applications.</p>
+                <!-- <p>Motivated BCA graduate with a strong foundation in PHP development,<br> seeking a challenging software developer role to apply my programming<br> skills and contribute to innovative projects while growing professionally.</p> -->
+                <button class="btn"><a href="c:\Users\kanna\Downloads\v.kannan.pdf " target="_blank">Resume</a></button>
             </div>
         </div>
     </section>
+    <section id="about" class="about">
+        <h2>About Me</h2><br>
+        <div class="container1">
+            <p>I am a recent Bsc.IT graduate with a strong foundation in PHP development and a passion for coding.<br> I enjoy building dynamic websites and applications, leveraging technologies like PHP, MySQL, and modern frameworks. <br>As a quick learner and team player, I am eager to contribute to innovative projects while growing my skills and advancing my career as a Full stack developer.</p>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <h2>My Projects</h2><br>
+        <div class="container">
+            
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3>Tic Tac Toe</h3>
+                    <p>A classic Tic Tac Toe game where two players can play, determining the winner. The game involves nine moves and showcases the winner using JavaScript.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Memory Card Game</h3>
+                    <p>A fun image-matching game where players flip cards to find pairs. Cards are shuffled randomly, and matched pairs disappear. The game ends with a win message when all pairs are found.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Monogram Webpage</h3>
+                    <p>Developed a fully responsive Monogram-style landing page with a structured navigation bar, interactive sections, and social media integrations. Ensured mobile-friendly design with adaptive layouts for different screen sizes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skill" class="skill">
+        <h2>My Skills</h2>
+        <div class="container">
+            
+            <div class="skills-container">
+                <div class="skills-category">
+                    <div class="skills-list">
+                        <div class="skill-card">
+                            <img src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/181_Java-1024.png" height="50px" width="50px">
+                            <h4>Java</h4>
+                        </div>
+                   
+                        <div class="skill-card">
+                            <img src="https://icon-library.com/images/html5-icon/html5-icon-13.jpg" alt="HTML" class="skill-icon" height="50px" width="50px">
+                            <h4>HTML</h4>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/121-css3-1024.png" alt="CSS" height="50px" width="50px">
+                            <h4>CSS</h4>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://static.vecteezy.com/system/resources/previews/027/127/463/original/javascript-logo-javascript-icon-transparent-free-png.png" alt="JavaScript" class="skill-icon" height="50px" width="50px">
+                            <h4>JavaScript</h4>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://th.bing.com/th/id/OIP.7HHjYiNdT8wJUR3C87kglgAAAA?rs=1&pid=ImgDetMain" alt="Bootstrap"    class="a1" height="50px" width="50px">
+                            <h4>Bootstrap 5</h4>
+                        </div>
+                        <div class="skill-card">
+                            <img src="https://pngimg.com/d/mysql_PNG23.png"height="20px" width="25px" alt="Java" class="a2" >
+                            <h4>MYSQL</h4>
+                        </div>
+                      
+                    </div>
+                </div>
     
-    <section id="contact">
-        <h1>Contact</h1>
-        <p>Email: example@example.com</p>
-        <p>Phone: 123-456-7890</p>
-        <div class="contact">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            
+    
+            </div>
         </div>
     </section>
     
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll("section");
-            sections.forEach(section => {
-                section.style.opacity = 0;
-                section.style.transform = "translateY(50px)";
-                section.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
-            });
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="container">
             
-            const revealSections = () => {
-                sections.forEach(section => {
-                    const rect = section.getBoundingClientRect();
-                    if (rect.top < window.innerHeight * 0.8) {
-                        section.style.opacity = 1;
-                        section.style.transform = "translateY(0)";
-                    }
-                });
-            };
-            
-            window.addEventListener("scroll", revealSections);
-            revealSections();
-        });
-    </script>
+            <form id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit" class="btn-submit">Send</button>
+            </form>
+    
+            <!-- Thank You Message -->
+            <p class="thank-you-msg" style="display:none; color: green; font-weight: bold;">
+                Thank you! Your message has been sent.
+            </p>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Faruk. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    
 </body>
 </html>
